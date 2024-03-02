@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Contasoc Docs</title>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="shortcut icon" href="images/contasoc.ico">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+<!-- Theme CSS -->
+<link id="theme-style" rel="stylesheet" href="./contasoc.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body onmousedown="return false" onselectstart="return false">
+    <center>
+        <div class="wrapper">
+            <h1 class="title">Contasoc Docs</h1>
+        </div>
+        <div class="tiles">
+            <div onclick="changeIframeTo('socios')" class="tile-item">
+                <a>SOCIOS</a>
+            </div>
+            <div onclick="changeIframeTo('ingresos')" class="tile-item">
+                <a>INGRESOS</a>
+            </div>
+            <div onclick="changeIframeTo('gastos')" class="tile-item">
+                <a>GASTOS</a>
+            </div>
+            <div onclick="changeIframeTo('balance')" class="tile-item">
+                <a>BALANCE</a>
+            </div>
+            <div onclick="changeIframeTo('email')" class="tile-item">
+                <a>EMAIL</a>
+            </div>
+        </div>
+        <div class="contenido">
+            <iframe class="renderer" src="socios.html"></iframe>
+        </div>
+    </center>
+    <script type="text/javascript">
+        $(document).bind("contextmenu",function(e){
+        return false;
+        });
+    </script>
+</body>
+
+<script>
+    function changeIframeTo(page) {
+        var iframe = document.getElementsByClassName("renderer")[0];
+        iframe.src = "./" + page.toLowerCase() + ".html";
+    }
+</script>
+
+</html>
